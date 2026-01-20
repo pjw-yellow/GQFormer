@@ -110,14 +110,14 @@ pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1+cu1
 pip install -U opencv-python==4.12.0.88
 
 # under your working directory
-git clone git@github.com:facebookresearch/detectron2.git
+git clone https://github.com/facebookresearch/detectron2.git
 cd detectron2
 pip install -e .
 pip install git+https://github.com/cocodataset/panopticapi.git
 pip install git+https://github.com/mcordts/cityscapesScripts.git
 
 cd ..
-git clone git@github.com:pjw-yellow/GQFormer.git
+git clone https://github.com/pjw-yellow/GQFormer.git
 cd GQFormer
 pip install -r requirements.txt
 cd mask2former/modeling/pixel_decoder/ops
