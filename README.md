@@ -103,7 +103,7 @@ In your configuration file, specify this file as the backbone initialization.
 ## Installation
 
 ```bash
-conda create --name gqformer python=3.8.20 -y
+conda create --name GQformer python=3.8.20 -y
 conda activate GQformer
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1+cu116 \
   --extra-index-url https://download.pytorch.org/whl/cu116

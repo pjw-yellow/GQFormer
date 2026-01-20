@@ -9,8 +9,6 @@ inference_test_output
 *.diff
 *.jpg
 !/projects/DensePose/doc/images/*.jpg
-!pic/**/*.png
-!pic/**/*.jpg
 
 # compilation and distribution
 __pycache__
