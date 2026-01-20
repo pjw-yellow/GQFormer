@@ -1,0 +1,32 @@
+_BASE_: maskformer2_R50_bs16_160k.yaml
+MODEL:
+  WEIGHTS: "pretrained/R-101.pkl"
+  RESNETS:
+    DEPTH: 101
+    STEM_TYPE: "basic"  # not used
+    STEM_OUT_CHANNELS: 64
+    STRIDE_IN_1X1: False
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+    NORM: "BN"
+    RES5_MULTI_GRID: [1, 1, 1]  # not used
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 19
+  MASK_FORMER:
+    TRANSFORMER_DECODER_NAME: "MultiScaleMaskedTransformerDecoder"
+    TRANSFORMER_IN_FEATURE: "multi_scale_pixel_decoder"
+DATASETS:
+  TRAIN: ("my_rs19pros_train",)
+  TEST: ("my_rs19pros_val",)
+SOLVER:
+  IMS_PER_BATCH: 16
+  MAX_ITER: 90000
+INPUT:
+  CROP:
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE: (512, 512)
+DATALOADER:
+  FILTER_EMPTY_ANNOTATIONS: True
+  NUM_WORKERS: 16
+
+OUTPUT_DIR: "output/mask2former_3"
